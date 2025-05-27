@@ -30,7 +30,7 @@
 <p style="text-align: center; font-size: 1.2em;">
   
 <p align="">
-<a href='https://hunter-xmd-pair2.onrender.com/pair' target="_blank"><img alt='Netlify' src='https://img.shields.io/badge/-pair code site-CC00FF?style=for-the-badge&logo=session&logoColor=white'/< width=150 height=28/p></a> </a>
+<a href='https://hunterxmd-pair2.onrender.com/' target="_blank"><img alt='Netlify' src='https://img.shields.io/badge/-pair code site-CC00FF?style=for-the-badge&logo=session&logoColor=white'/< width=150 height=28/p></a> </a>
 <a><img
 
 <p style="text-align: center; font-size: 1.2em;">
@@ -39,12 +39,12 @@
 <a href='https://hunter-xmd-pair2.onrender.com/qr' target="_blank"><img alt='Netlify' src='https://img.shields.io/badge/-scan qr code -CC00FF?style=for-the-badge&logo=session&logoColor=white'/< width=150 height=28/p></a> </a>
 <a><img
      
-### <h4 align="">. HUNTER-XMD WEBSITE</h4>
+### <h4 align="">. ᎷᎽ ՏϴΝᏀՏ-ᎠϴᏔΝᏞϴᎠᎬᎡ</h4>
 <p style="text-align: center; font-size: 1.2em;">
   
 </a>
-<a href='https://hunter-xmd-pair2.onrender.com/' target="_blank">
-  <img alt='WEBSITE' src='https://img.shields.io/badge/click%20HUNTER%20 WEBSITE-darkpink?style=for-the-badge&logo=website&logoColor=black'/>
+<a href='https://songs-downloader2.vercel.app' target="_blank">
+  <img alt='ᎠϴᏔΝᏞϴᎪᎠ' src='https://img.shields.io/badge/click%20SONGS%20 DOWNLOADER-darkpink?style=for-the-badge&logo=website&logoColor=black'/>
 </a>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
