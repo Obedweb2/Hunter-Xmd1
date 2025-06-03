@@ -50,7 +50,7 @@ made by 🄾🄱🄴🄳 🅃🄴🄲🄷💟
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363391979107532@newsletter',
+                newsletterJid: '120363416335506023@newsletter',
                 newsletterName: config.OWNER_NAME,
                 serverMessageId: 143
             }
