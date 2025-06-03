@@ -1,3 +1,4 @@
+const fs = require('fs');
 const config = require('../config');
 const { cmd, commands } = require('../command');
 const { runtime } = require('../lib/functions');
@@ -7,10 +8,13 @@ cmd({
     pattern: "menu",
     desc: "Show interactive menu system",
     category: "menu",
-    react: "🧾",
+    react: "⚡",
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
+        // Count total commands
+        const totalCommands = Object.keys(commands).length;
+        
         const menuCaption = `╭━━━〔 *${config.BOT_NAME}* 〕━━━┈⊷
 ┃★╭──────────────
 ┃★│  Owner : *${config.OWNER_NAME}*
@@ -19,23 +23,25 @@ cmd({
 ┃★│  Platform : *Heroku*
 ┃★│  Mode : *[${config.MODE}]*
 ┃★│  Prefix : *[${config.PREFIX}]*
-┃★│  Version : *5.0.0 ObedX*
+┃★│  Version : *5.5𝒐𝒃𝒆𝒅𝑿 *
+┃★│  Commands : *${totalCommands}*
 ┃★╰──────────────
-*Have fun with these reliable commands!*⌛
+*⚙️ Master the Bot with These Essential Commands ⚙️*
 ╰━━━━━━━━━━━━━━━┈⊷
 ╭━━〔 *Menu List* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈│ *[1]*   *Download Menu* ⌛⌛
-┃◈│ *[2]*   *Group Menu* 👏👏
-┃◈│ *[3]*   *Fun Menu* 🦹🦹
-┃◈│ *[4]*   *Owner Menu* 🧑‍✈️🧑‍✈️
-┃◈│ *[5]*   *AI Menu* ✍️✍️
-┃◈│ *[6]*   *Anime Menu* 👫👫
-┃◈│ *[7]*   *Convert Menu* ☀️☀️
-┃◈│ *[8]*   *Other Menu* 🌠🌠
-┃◈│ *[9]*   *Reactions Menu* 🪐🪐
-┃◈│ *[10]*   *Main Menu* 🛢️🛢️
+┃◈│1️⃣   *Download Menu*
+┃◈│2️⃣   *Group Menu*
+┃◈│3️⃣   *Fun Menu*
+┃◈│4️⃣   *Owner Menu*
+┃◈│5️⃣   *AI Menu*
+┃◈│6️⃣   *Anime Menu*
+┃◈│7️⃣   *Convert Menu*
+┃◈│8️⃣   *Other Menu*
+┃◈│9️⃣   *Reactions Menu*
+┃◈│🔟   *Main Menu*
 ┃◈╰───────────┈⊷
+made by 🄾🄱🄴🄳 🅃🄴🄲🄷💟
 ╰──────────────┈⊷
 > ${config.DESCRIPTION}`;
 
@@ -44,7 +50,7 @@ cmd({
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363416335506023@newsletter',
+                newsletterJid: '120363391979107532@newsletter',
                 newsletterName: config.OWNER_NAME,
                 serverMessageId: 143
             }
@@ -56,7 +62,7 @@ cmd({
                 return await conn.sendMessage(
                     from,
                     {
-                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/ggnnes.jpg' },
+                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/7zfdcq.jpg' },
                         caption: menuCaption,
                         contextInfo: contextInfo
                     },
@@ -72,43 +78,20 @@ cmd({
             }
         };
 
-        // Function to send menu audio with timeout
-        const sendMenuAudio = async () => {
-            try {
-                await new Promise(resolve => setTimeout(resolve, 1000)); // Small delay after image
-                await conn.sendMessage(from, {
-                    audio: { url: 'https://files.catbox.moe/a8155b.mp3' },
-                    mimetype: 'audio/mp4',
-                    ptt: true,
-                }, { quoted: mek });
-            } catch (e) {
-                console.log('Audio send failed, continuing without it');
-            }
-        };
-
-        // Send image first, then audio sequentially
+        // Send image with timeout
         let sentMsg;
         try {
-            // Send image with 10s timeout
             sentMsg = await Promise.race([
                 sendMenuImage(),
                 new Promise((_, reject) => setTimeout(() => reject(new Error('Image send timeout')), 10000))
             ]);
-            
-            // Then send audio with 1s delay and 8s timeout
-            await Promise.race([
-                sendMenuAudio(),
-                new Promise((_, reject) => setTimeout(() => reject(new Error('Audio send timeout')), 8000))
-            ]);
         } catch (e) {
             console.log('Menu send error:', e);
-            if (!sentMsg) {
-                sentMsg = await conn.sendMessage(
-                    from,
-                    { text: menuCaption, contextInfo: contextInfo },
-                    { quoted: mek }
-                );
-            }
+            sentMsg = await conn.sendMessage(
+                from,
+                { text: menuCaption, contextInfo: contextInfo },
+                { quoted: mek }
+            );
         }
         
         const messageID = sentMsg.key.id;
@@ -227,7 +210,7 @@ cmd({
 ┃★│ • restart
 ┃★│ • shutdown
 ┃★│ • updatecmd
-┃★╰───────────���──
+┃★╰──────────────
 ┃★╭──────────────
 ┃★│ ℹ️ *Info Tools*
 ┃★│ • gjid
@@ -424,7 +407,7 @@ cmd({
                                 await conn.sendMessage(
                                     senderID,
                                     {
-                                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/ggnnes.jpg' },
+                                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/7zfdcq.jpg' },
                                         caption: selectedMenu.content,
                                         contextInfo: contextInfo
                                     },

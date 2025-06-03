@@ -4,7 +4,6 @@ const { runtime } = require('../lib/functions');
 const axios = require('axios');
 
 function isEnabled(value) {
-    // Function to check if a value represents a "true" boolean state
     return value && value.toString().toLowerCase() === "true";
 }
 
@@ -18,12 +17,9 @@ cmd({
 }, 
 async (conn, mek, m, { from, quoted, reply, isCreator }) => {
     try {
-        // Owner check
         if (!isCreator) {
             return reply("🚫 *Owner Only Command!* You're not authorized to view bot configurations.");
         }
-
-        const isEnabled = (value) => value && value.toString().toLowerCase() === "true";
 
         let envSettings = `
 ╭───『 *${config.BOT_NAME} CONFIG* 』───❏
@@ -47,7 +43,6 @@ async (conn, mek, m, { from, quoted, reply, isCreator }) => {
 │  ├─∘ *Custom React:* ${isEnabled(config.CUSTOM_REACT) ? "✅" : "❌"}
 │  ├─∘ *React Emojis:* ${config.CUSTOM_REACT_EMOJIS}
 │  ├─∘ *Auto Sticker:* ${isEnabled(config.AUTO_STICKER) ? "✅" : "❌"}
-│  └─∘ *Auto Voice:* ${isEnabled(config.AUTO_VOICE) ? "✅" : "❌"}
 │
 ├─❏ *📢 STATUS SETTINGS*
 │  ├─∘ *Status Seen:* ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅" : "❌"}
@@ -86,17 +81,6 @@ async (conn, mek, m, { from, quoted, reply, isCreator }) => {
                     forwardingScore: 999,
                     isForwarded: true
                 }
-            },
-            { quoted: mek }
-        );
-
-        // Optional audio message
-        await conn.sendMessage(
-            from,
-            {
-                audio: { url: 'https://github.com/JawadYT36/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
-                mimetype: 'audio/mp4',
-                ptt: true
             },
             { quoted: mek }
         );
