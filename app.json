@@ -1,7 +1,7 @@
 {
   "name": "ᎻႮΝͲᎬᎡ ХᎷᎠ ",
   "description": "Javascript WhatsApp bot made by 🄾🄱🄴🄳 🅃🄴🄲🄷",
-  "logo": "https://files.catbox.moe/ggnnes.jpg",
+  "logo": "https://files.catbox.moe/mdn0ez.jpg",
   "keywords": ["ᎻႮΝͲᎬᎡ ХᎷᎠ"],
   "success_url": "/",
 
@@ -132,7 +132,7 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": false,
-      "value": "https://files.catbox.moe/ggnnes.jpg"
+      "value": "https://files.catbox.moe/mdn0ez.jpg"
     },
     
      "DESCRIPTION": {
