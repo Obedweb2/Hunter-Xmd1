@@ -21,7 +21,7 @@
   </p>
 
 <div align="center">
-  <img src="https://files.catbox.moe/jy8nu6.jpg" width="300" style="border-radius: 20px; box-shadow: 0 0 20px #00ffff;"/>
+  <img src="https://files.catbox.moe/g67skc.jpg" width="300" style="border-radius: 20px; box-shadow: 0 0 20px #00ffff;"/>
 </div>
 
 **FIRST PAIR WEB**
