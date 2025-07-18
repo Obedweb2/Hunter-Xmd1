@@ -4,7 +4,7 @@
   "description": "A WhatsApp Bot Created By Hunterxmd",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name CRISS-AI",
+    "start": "pm2 start index.js --deep-monitoring --attach --name OBEDTECH",
     "stop": "pm2 stop HUNTER-XMD",
     "restart": "pm2 restart HUNTER-XMD"
   },
